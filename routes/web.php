@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
+    echo date("Y-m-d,h:i:s");
     return view('welcome');
 });
 Route::any('/add','TestController@add');
 Route::any('/redis','TestController@redisTest');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
